@@ -1,6 +1,6 @@
 # ParadoxHassMQTT
 
-Support for Paradox Alarms using the Paradox Home Integration Module (PRT3)
+HomeAssistant Support for Paradox Alarms using the Paradox Home Automation Integration Module (PRT3)
 
 # Installation
 

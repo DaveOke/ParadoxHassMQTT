@@ -7,9 +7,10 @@ var ParadoxConnector = require('./lib/paradox');
 
 var configuration = {
         baudRate: 57600,
-        device: 'ttyUSB0',
+        device: "ttyUSB0",
 	areaCount: 1,
 	userCount: 3,
+	panelUserCode: "1111",
 	zoneConfiguration:  {
  		1: { "name": "", "device_class": "motion"},
  		2: { "name": "", "device_class": "motion"},
