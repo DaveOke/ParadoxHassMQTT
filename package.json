@@ -1,0 +1,15 @@
+{
+  "name": "paradoxhassmqtt",
+  "version": "1.0.0",
+  "description": "Bridges Paradox Panels with HomeAssistant",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^2.16.0",
+    "serialport": "^6.1.1"
+  }
+}
