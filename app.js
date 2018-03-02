@@ -1,5 +1,10 @@
 var ParadoxConnector = require('./lib/paradox');
 
+// Adjust the device class to match your sensors. Remove/Add as needed
+// zone configuration key should match the zone id on your panel
+// If the name field is left blank, the zone name is automatically pulled from the Paradox panel.
+// If you specify a name, your name will override the panel's zone name
+
 var configuration = {
         baudRate: 57600,
         device: 'ttyUSB0',
