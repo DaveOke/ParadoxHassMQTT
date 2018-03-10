@@ -43,6 +43,7 @@ Configuration sample:
         }
 
     }
+ ```
 
 # Sample Virtual Input Configuration.yaml entry - Input 1
 
@@ -56,3 +57,4 @@ Configuration.yaml
         command_topic: "paradox_evo/alarm/virtual_zone/1/set"
         payload_on: "OPEN"
         payload_off: "CLOSED"
+```
