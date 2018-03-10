@@ -16,6 +16,7 @@ Configuration sample:
 
  ```
     var configuration = {
+        mqttAddress: "mqtt://localhost",
         baudRate: 57600,
         device: 'ttyUSB0',
         areaCount: 1,
@@ -33,6 +34,25 @@ Configuration sample:
                 9: { "name": "", "device_class": "window"},
                 10: { "name": "", "device_class": "window"},
                 11: { "name": "", "device_class": "window"},
+        },
+        pgmConfiguration: {
+                1: { "name": "TestPGM1", "device_class": "problem" } // Delete this line if no Virtual PGMs
+        },
+        virtualZoneConfiguration: {
+                1 : { "panelZone": 12 } // delete this line if no virtual zones
         }
+
     }
 
+# Sample Virtual Input Configuration.yaml entry - Input 1
+
+Configuration.yaml
+
+ ```
+    switch:
+      - platform: mqtt
+        name: "Test Virtual Switch"
+        state_topic: "paradox_evo/alarm/virtual_zone/1"
+        command_topic: "paradox_evo/alarm/virtual_zone/1/set"
+        payload_on: "OPEN"
+        payload_off: "CLOSED"
