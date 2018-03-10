@@ -5,9 +5,10 @@ HomeAssistant Support for Paradox Alarms using the Paradox Home Automation Integ
 # Installation
 
 1. Once downloaded, install this plugin using: npm install --unsafe-perm 
-2. Update your configuration file. See bellow for a sample.
+2. Update your configuration file. See bellow for a sample
+3. You do not need to update the name in the zone configuration - if left blank, it will autopopulate from the panel
 3. Note: This app must be run as a user with dial-out permissions or it won't be able to open the serial port
-4. Add mqtt section to your configuration.yaml. Use autodiscovery option.
+4. Add mqtt section to your configuration.yaml. Use autodiscovery option
 5. Once this app is run, you should now see your paradox modules as sensors in HomeAssistant
 
 # Configuration
@@ -45,11 +46,21 @@ Configuration sample:
     }
  ```
 
-# Sample Virtual Input Configuration.yaml entry - Input 1
+# HomeAssistant Configuration
 
 Configuration.yaml
 
  ```
+	# Sample MQTT Alarm Panel for Area 1
+	alarm_control_panel:
+    - platform: mqtt
+      state_topic: "paradox_evo/alarm/area/1"
+      command_topic: "paradox_evo/alarm/area/1/set"
+      name: "Paradox Evo"
+      payload_disarm: "DISARM"
+      payload_arm_home: "ARM"
+
+    # Sample MQTT Virtual Zone
     switch:
       - platform: mqtt
         name: "Test Virtual Switch"
@@ -58,3 +69,20 @@ Configuration.yaml
         payload_on: "OPEN"
         payload_off: "CLOSED"
 ```
+
+Groups.yaml
+
+```
+
+	paradox_overview:
+	  name: Paradox Alarm
+	  entities:
+		- alarm_control_panel.paradox_evo
+		- binary_sensor.motion_sensor_1
+		- binary_sensor.door_contact_1
+
+```
+
+# Virtual PGMs
+
+Virtual PGMs entity name will be binary_sensor.paradox_vpgm<PGM ID>
