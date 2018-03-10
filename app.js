@@ -1,4 +1,4 @@
-:qvar ParadoxConnector = require('./lib/paradox');
+var ParadoxConnector = require('./lib/paradox');
 
 // Adjust the device class to match your sensors. Remove/Add as needed
 // zone configuration key should match the zone id on your panel
