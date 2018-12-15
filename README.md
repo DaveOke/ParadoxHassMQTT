@@ -13,6 +13,8 @@ Note: You'll need Node.JS for this project to run. See: https://nodejs.org. You'
 4. Add mqtt section to your configuration.yaml. Use autodiscovery option
 5. Once this app is run, you should now see your paradox modules as sensors in HomeAssistant
 
+Optional: You can use forever/forever-service to install this as a system service.
+
 # Configuration
 
 Configuration sample:
