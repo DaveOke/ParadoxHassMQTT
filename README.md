@@ -4,6 +4,8 @@ HomeAssistant Support for Paradox Alarms using the Paradox Home Automation Integ
 
 # Installation
 
+Note: You'll need Node.JS for this project to run. See: https://nodejs.org. You'll also need a MQTT broker. I use Mosquitto, however, the built-in mqtt broker in Home Assistant should work fine.
+
 1. Once downloaded, install this plugin using: npm install --unsafe-perm 
 2. Update your configuration file. See bellow for a sample
 3. You do not need to update the name in the zone configuration - if left blank, it will autopopulate from the panel
