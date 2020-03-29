@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "mqtt": "^2.16.0",
-    "serialport": "^6.1.1"
+    "serialport": "^8.0.6"
   }
 }
