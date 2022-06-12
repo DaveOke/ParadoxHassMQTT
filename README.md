@@ -52,6 +52,12 @@ var configuration = {
 }
  ```
 
+# Topics to get states
+
+To get zone information, send an empty message to `paradox_evo/alarm/status/zone`.
+
+To get area (panel) information, send an empty message to `paradox_evo/alarm/status/area`.
+
 # HomeAssistant Configuration
 
 Configuration.yaml
@@ -74,19 +80,33 @@ Configuration.yaml
         command_topic: "paradox_evo/alarm/virtual_zone/1/set"
         payload_on: "OPEN"
         payload_off: "CLOSED"
+        
+    # Sample state reload after HASS restart
+    automation:
+      - alias: "State reload on HA start-up"
+        trigger:
+          platform: homeassistant
+          event: start
+        action:
+          - service: mqtt.publish
+            data:
+              topic: "paradox_evo/alarm/status/zone"
+              payload: ""
+          - service: mqtt.publish
+            data:
+              topic: "paradox_evo/alarm/status/area"
+              payload: ""
 ```
 
 Groups.yaml
 
 ```
-
 	paradox_overview:
 	  name: Paradox Alarm
 	  entities:
 		- alarm_control_panel.paradox_evo
 		- binary_sensor.motion_sensor_1
 		- binary_sensor.door_contact_1
-
 ```
 
 # Virtual PGMs
