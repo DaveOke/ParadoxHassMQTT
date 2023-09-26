@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^2.16.0",
-    "serialport": "^8.0.6"
+    "mqtt": "^5.0.5",
+    "serialport": "^12.0.0"
   }
 }
